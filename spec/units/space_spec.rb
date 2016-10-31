@@ -12,4 +12,8 @@ describe Space do
   it "has a price" do
     expect(space).to respond_to(:price)
   end
+
+  it "has a postcode" do
+    expect(space).to respond_to(:postcode)
+  end
 end
