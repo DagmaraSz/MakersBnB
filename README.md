@@ -63,3 +63,5 @@ I want to see their status
 
 ## Current MVP and progress
 https://waffle.io/AkramRasikh/MakersBnB
+
+[![Stories in Progress](https://badge.waffle.io/AkramRasikh/MakersBnB.svg?label=in_progress&title=In_Progress)](http://waffle.io/AkramRasikh/MakersBnB)
