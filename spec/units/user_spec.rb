@@ -19,6 +19,4 @@ describe User do
     expect{User.create(email: "makers@example.com")}.to change(User, :count).by(0)
   end
 
-
-
 end
