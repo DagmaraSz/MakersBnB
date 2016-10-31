@@ -8,4 +8,8 @@ describe Space do
   it "has an address" do
     expect(space).to respond_to(:address)
   end
+
+  it "has a price" do
+    expect(space).to respond_to(:price)
+  end
 end
