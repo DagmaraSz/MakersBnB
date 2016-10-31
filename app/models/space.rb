@@ -6,5 +6,6 @@ class Space
   property :id, Serial
   property :name, String
   property :address, Text
+  property :postcode, Text
   property :price, Decimal
 end
