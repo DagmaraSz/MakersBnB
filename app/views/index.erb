@@ -1,0 +1,15 @@
+<body>
+  <h2> Makers Bnb </h2>
+    <h3> List of spaces: </h3>
+    <ul id ='spaces'>
+      <% @spaces.each do |space| %>
+      <li>
+        Name: <%= space.name %> <br>
+        Address: <%= space.address %> <br>
+        Postcode: <%= space.postcode %> <br>
+        Price (£ pw): <%= space.price %>
+      </li>
+      <% end %>
+    </ul>
+</body>
+<br>
