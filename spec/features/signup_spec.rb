@@ -14,4 +14,8 @@ feature 'User sign up' do
   scenario 'user tries to sign_up with invalid email address' do
     expect{sign_up_invalid_address}.to change(User, :count).by(0)
   end
+
+  scenario 'user enters an invalid password into password confirmation' do
+    expect{sign_up_invalid_password}.to change(User, :count).by(0)
+  end
 end
