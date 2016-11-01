@@ -7,8 +7,15 @@ require_relative 'models/space'
 
 class MakersBnb < Sinatra::Base
 
+  enable :sessions
+
+
   get '/' do
     erb :'home'
+  end
+
+  before '/spaces' do
+    authenticate
   end
 
   get '/spaces' do
@@ -24,6 +31,17 @@ class MakersBnb < Sinatra::Base
   space = Space.create(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
   space.save
   redirect '/spaces'
+  end
+
+
+  helpers do #just to all access
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+
+    def authenticate
+      redirect('/') if current_user.nil?
+    end
   end
 
 
