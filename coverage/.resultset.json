@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/katymccann/git/MakersBnB/app/app.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/app/app.rb": [
         null,
         1,
         1,
@@ -12,15 +12,21 @@
         1,
         null,
         1,
-        3,
+        4,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         1,
         1,
         1,
-        null,
-        null,
-        1,
         1,
         null,
         null,
@@ -28,13 +34,7 @@
         1,
         1,
         1,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        0,
         null,
         null,
         null,
@@ -43,7 +43,7 @@
         1,
         null
       ],
-      "/Users/katymccann/git/MakersBnB/app/models/data_mapper_setup.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/app/models/data_mapper_setup.rb": [
         1,
         1,
         null,
@@ -55,7 +55,7 @@
         1,
         1
       ],
-      "/Users/katymccann/git/MakersBnB/app/models/user.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/app/models/user.rb": [
         1,
         1,
         1,
@@ -90,30 +90,20 @@
         null,
         null,
         1,
-        11,
-        11,
+        12,
+        12,
         null,
         null,
         null,
         null
       ],
-      "/Users/katymccann/git/MakersBnB/app/models/space.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/app/models/space.rb": [
         1,
         1,
         null,
         1,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/katymccann/git/MakersBnB/spec/web_helper.rb": [
-        null,
-        1,
         1,
         1,
         1,
@@ -121,7 +111,17 @@
         1,
         null
       ],
-      "/Users/katymccann/git/MakersBnB/spec/features/login_spec.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/spec/web_helper.rb": [
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/spec/features/login_spec.rb": [
         1,
         null,
         1,
@@ -133,7 +133,7 @@
         null,
         null
       ],
-      "/Users/katymccann/git/MakersBnB/spec/features/signup_spec.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/spec/features/signup_spec.rb": [
         1,
         null,
         1,
@@ -143,12 +143,13 @@
         1,
         1,
         null,
+        1,
         1,
         2,
         null,
         null
       ],
-      "/Users/katymccann/git/MakersBnB/spec/units/space_spec.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/spec/units/space_spec.rb": [
         1,
         null,
         1,
@@ -169,7 +170,7 @@
         null,
         null
       ],
-      "/Users/katymccann/git/MakersBnB/spec/units/user_spec.rb": [
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/spec/units/user_spec.rb": [
         1,
         null,
         1,
@@ -211,6 +212,6 @@
         null
       ]
     },
-    "timestamp": 1478016095
+    "timestamp": 1478017316
   }
 }
