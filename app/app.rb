@@ -8,12 +8,12 @@ require_relative 'models/space'
 class MakersBnb < Sinatra::Base
 
   get '/' do
-
+    erb :'home'
   end
 
   get '/spaces' do
     @spaces = Space.all
-    erb :index
+    erb :'index'
   end
 
   get '/spaces/new' do
