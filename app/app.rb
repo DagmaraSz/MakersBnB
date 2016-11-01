@@ -6,6 +6,11 @@ require_relative 'models/space'
 
 
 class MakersBnb < Sinatra::Base
+
+  get '/' do
+
+  end
+
   get '/spaces' do
     @spaces = Space.all
     erb :index
