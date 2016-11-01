@@ -1,5 +1,4 @@
 require 'spec_helper'
-
 feature 'User sign up' do
   scenario 'Users can sign up as a new user' do
     visit '/'
