@@ -7,4 +7,7 @@ feature 'User sign up' do
     expect(page).to have_content('Sign up here')
     expect(page).to have_button('Create account')
   end
+  scenario 'User is added to the database' do
+    expect{sign_up}.to change(User, :count).by(1)
+  end
 end
