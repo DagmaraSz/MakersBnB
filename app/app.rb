@@ -33,6 +33,13 @@ class MakersBnb < Sinatra::Base
   redirect '/spaces'
   end
 
+  post '/users' do
+    user = User.new(email: params[:email_signup], password: params[:password_signup], password_confirmation: params[:password_confirmation])
+    user.save
+    p user
+    redirect '/spaces'
+  end
+
 
   helpers do #just to all access
     def current_user

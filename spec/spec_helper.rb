@@ -11,6 +11,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
 require_relative '../app/models/space'
+require 'web_helper'
 
 require './app/models/user'
 
