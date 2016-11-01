@@ -63,7 +63,6 @@ I want to see a place until its booking request has been confirmed
 So that I can keep track of my requests  
 I want to see their status
 
-
 ## Current MVP and progress
 https://waffle.io/AkramRasikh/MakersBnB
 
