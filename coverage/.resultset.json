@@ -12,7 +12,7 @@
         1,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -79,6 +79,18 @@
         1,
         null
       ],
+      "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/spec/features/login_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/Dio22/Makers_Academy/Weekly_Challenges/Week6_Makers_bnb/MakersBnB/spec/features/signup_spec.rb": [
         1,
         null,
@@ -137,6 +149,6 @@
         null
       ]
     },
-    "timestamp": 1478008960
+    "timestamp": 1478009230
   }
 }

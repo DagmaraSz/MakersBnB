@@ -1,13 +1,21 @@
 <html>
   <head>
    <title>MakersBnB</title>
-   <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+   <!-- <link rel="stylesheet" type="text/css" href="app/views/main.css"/> -->
+   <style>
+
+   #log_in {
+     margin-left: 5cm;
+     margin-top: 5cm;
+   }
+
+   </style>
   </head>
   <body>
     <h2> Welcome to MakersBnB </h2>
-    <section>
+    <section id="sign_up">
       <h3> Sign up here </h3>
-      <form id="sign_up" action="/" method="post">
+      <form action="/" method="post">
         <p> E-mail :</p>
         <input type="text" name="email"> <br>
         <p> Password: </p>
@@ -17,5 +25,17 @@
         <input type="submit" value="Create account">
     </form>
     </section>
+    <section id="log_in" type="text/css">
+      <h3> Log in here </h3>
+      <form action="/" method="post">
+        <p> E-mail :</p>
+        <input type="text" name="email"> <br>
+        <p> Password: </p>
+        <input type="text" name="password"><br>
+        <input type="submit" value="Log in">
+    </form>
+    </section>
   </body>
+
+
 </html>
