@@ -1,7 +1,7 @@
 require 'spec_helper'
 require './app/models/space.rb'
 
-feature 'create space' do
+xfeature 'create space' do
   scenario "it creates and lists space at home" do
     sign_in
     visit '/spaces/new'
