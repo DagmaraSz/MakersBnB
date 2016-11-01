@@ -9,7 +9,6 @@ class MakersBnb < Sinatra::Base
 
   enable :sessions
 
-
   get '/' do
     erb :'home'
   end
@@ -36,7 +35,6 @@ class MakersBnb < Sinatra::Base
   post '/users' do
     user = User.new(email: params[:email_signup], password: params[:password_signup], password_confirmation: params[:password_confirmation])
     user.save
-    p user
     redirect '/spaces'
   end
 
