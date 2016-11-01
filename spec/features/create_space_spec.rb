@@ -3,6 +3,7 @@ require './app/models/space.rb'
 
 feature 'create space' do
   scenario "it creates and lists space at home" do
+    sign_in
     visit '/spaces/new'
     fill_in 'name', with: '2 bedroom flat'
     fill_in 'address', with: 'liverpool street'
