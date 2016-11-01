@@ -16,8 +16,6 @@ describe User do
   end
 
   it "authenticates when given a valid email and password" do
-    p user.email
-    p User.first(email: "bob@example.com")
     authenticated_user = User.authenticate(user.email, "password")
     expect(authenticated_user).to eq user
   end
@@ -34,7 +32,6 @@ describe User do
     User.create(email: "tom@example.com", password: "password")
     expect{User.create(email: "tom@example.com", password: "password")}.to change(User, :count).by(0)
   end
-
 
   it "stops you from setting a password of less than 6 characters" do
     expect{User.create(email: "makers@example.com", password: "abcd")}.to change(User, :count).by(0)
