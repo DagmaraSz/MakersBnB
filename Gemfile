@@ -10,7 +10,7 @@ gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
 gem 'rspec'
-
+gem 'coveralls', require: false
 
 group :test do
   gem 'capybara'

@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/AkramRasikh/MakersBnB.svg?branch=master)](https://travis-ci.org/AkramRasikh/MakersBnB)
+[![Coverage Status](https://coveralls.io/repos/github/AkramRasikh/MakersBnB/badge.svg?branch=master)](https://coveralls.io/github/AkramRasikh/MakersBnB?branch=master)
+
 # User Stories
 
 1. As a user  
