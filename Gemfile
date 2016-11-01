@@ -9,9 +9,10 @@ gem 'dm-migrations'
 gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
+gem 'rspec'
+
 
 group :test do
-  gem 'rspec'
   gem 'capybara'
   gem 'rspec-sinatra'
 end
