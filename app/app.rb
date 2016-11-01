@@ -6,19 +6,24 @@ require_relative 'models/space'
 
 
 class MakersBnb < Sinatra::Base
+
   get '/' do
-    @spaces = Space.all
-    erb :index
+    erb :'home'
   end
 
-  get '/space/new' do
+  get '/spaces' do
+    @spaces = Space.all
+    erb :'index'
+  end
+
+  get '/spaces/new' do
     erb :'space/space_new'
   end
 
-  post '/' do
+  post '/spaces' do
   space = Space.create(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
   space.save
-  redirect '/'
+  redirect '/spaces'
   end
 
 
