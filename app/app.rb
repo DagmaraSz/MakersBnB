@@ -1,12 +1,9 @@
 
 ENV["RACK_ENV"] ||= 'development'
 require 'sinatra/base'
-<<<<<<< HEAD
 require 'carrierwave/datamapper'
 require 'carrierwave'
-=======
 require 'sinatra/flash'
->>>>>>> origin/master
 require_relative 'models/data_mapper_setup'
 
 
@@ -89,8 +86,6 @@ class MakersBnb < Sinatra::Base
       redirect('/') if current_user.nil?
     end
   end
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
