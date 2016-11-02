@@ -5,9 +5,15 @@ require 'carrierwave'
 require 'sinatra/flash'
 require_relative 'models/data_mapper_setup'
 
+CarrierWave.configure do |config|
+  config.root = File.dirname(__FILE__)
+end
+
 class MakersBnb < Sinatra::Base
   use Rack::MethodOverride
   register Sinatra::Flash
+
+  set :root,    File.dirname(__FILE__)
 
   enable :sessions
 
@@ -77,8 +83,9 @@ class MakersBnb < Sinatra::Base
 
   post '/image/new' do
     img = Image.new
-    img.image = params[:image]
+    img.image = params[:file]
     img.save!
+    # img.image.store!
     redirect('/image')
   end
 
