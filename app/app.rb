@@ -6,7 +6,7 @@ require 'sinatra/flash'
 require_relative 'models/data_mapper_setup'
 
 CarrierWave.configure do |config|
-  config.root = File.dirname(__FILE__)
+  config.root = File.dirname(__FILE__) + "/public"
 end
 
 class MakersBnb < Sinatra::Base
@@ -71,8 +71,6 @@ class MakersBnb < Sinatra::Base
 
   get '/image' do
     @image = Image.last
-    p @image
-    p @image.image
     erb :image
   end
 
@@ -82,10 +80,17 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/image/new' do
+    # img = Image.create(image: params[:file])
     img = Image.new
-    img.image = params[:file]
+    my_uploader = ImageUploader.new
+    my_uploader.store!(params[:file])
+    img[:image] = params[:file][:filename]
     img.save!
+
+    # img.image = params[:file]
+    #
     # img.image.store!
+    # img.save!
     redirect('/image')
   end
 

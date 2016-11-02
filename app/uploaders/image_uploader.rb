@@ -3,8 +3,4 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   storage :file
 
-  # def store_dir
-  #   "app/uploads/tmp"
-  # end
-
 end
