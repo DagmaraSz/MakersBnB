@@ -17,7 +17,7 @@ feature 'Prevent access to listings' do
     expect(page.current_path).to eq '/spaces'
   end
 
-  xscenario "using correct sign in details" do
+  scenario "using correct sign in details" do
     sign_in(email: user.email, password: user.password)
     expect(page).to have_content "Succesful login, #{user.email}"
   end
