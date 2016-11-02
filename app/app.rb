@@ -80,17 +80,11 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/image/new' do
-    # img = Image.create(image: params[:file])
     img = Image.new
     my_uploader = ImageUploader.new
     my_uploader.store!(params[:file])
     img[:image] = params[:file][:filename]
     img.save!
-
-    # img.image = params[:file]
-    #
-    # img.image.store!
-    # img.save!
     redirect('/image')
   end
 
