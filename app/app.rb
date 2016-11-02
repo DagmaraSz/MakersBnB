@@ -3,6 +3,7 @@ ENV["RACK_ENV"] ||= 'development'
 require 'sinatra/base'
 require_relative 'models/data_mapper_setup'
 require_relative 'models/space'
+require_relative 'models/dates'
 
 
 class MakersBnb < Sinatra::Base
@@ -13,9 +14,9 @@ class MakersBnb < Sinatra::Base
     erb :'home'
   end
 
-  before '/spaces' do
-    authenticate
-  end
+  # before '/spaces' do
+  #   authenticate
+  # end
 
   get '/spaces' do
     @spaces = Space.all
@@ -28,14 +29,17 @@ class MakersBnb < Sinatra::Base
 
   post '/spaces' do
   space = Space.create(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
-    params[:dates].each do |date|
-      space.dates << Date.create(day: date)
-    end
-    params[:months].each do |month|
-      space.months << Date.create(month: month)
-    end
+    # params[:date].each do |date|
+    #   space.dates << Date.create(date: date)
+    # end
+    # space.save
+    # params[:month].each do |month|
+    #   space.months << Date.create(month: month)
+    # end
+
+  date = Date.first_or_create(date: params[:dates])
+  space.dates << date
   space.save
-  
   redirect '/spaces'
   end
 
@@ -44,7 +48,6 @@ class MakersBnb < Sinatra::Base
     user.save
     redirect '/spaces'
   end
-
 
   helpers do #just to all access
     def current_user
