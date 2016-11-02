@@ -28,7 +28,12 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-  space = Space.create(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
+  space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
+  p space
+  date = Date.new(day: params[:day])
+  p date
+  space.dates << date
+  space.save
     # params[:date].each do |date|
     #   space.dates << Date.create(date: date)
     # end
@@ -37,9 +42,9 @@ class MakersBnb < Sinatra::Base
     #   space.months << Date.create(month: month)
     # end
 
-  date = Date.first_or_create(date: params[:dates])
-  space.dates << date
-  space.save
+  # date = Date.first_or_create(date: params[:dates])
+  # space.dates << date
+  # space.save
   redirect '/spaces'
   end
 
