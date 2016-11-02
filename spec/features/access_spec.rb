@@ -21,4 +21,6 @@ feature 'Prevent access to listings' do
     sign_in(email: user.email, password: user.password)
     expect(page).to have_content "Succesful login, #{user.email}"
   end
+
+
 end
