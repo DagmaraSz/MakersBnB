@@ -8,7 +8,7 @@ class Image
 
   property :id, Serial
 
-  property :file, String
+  property :image, Text
 
-  mount_uploader :file, ImageUploader
+  mount_uploader :image, ImageUploader
 end

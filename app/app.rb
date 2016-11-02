@@ -66,19 +66,19 @@ class MakersBnb < Sinatra::Base
   get '/image' do
     @image = Image.last
     p @image
-    p @image.file
+    p @image.image
     erb :image
   end
 
   get '/image/new' do
-    @images = Image.all
+    # @images = Image.all
     erb :'image_upload'
   end
 
   post '/image/new' do
-    image = Image.new
-    image.file = params[:image]
-    image.save!
+    img = Image.new
+    img.image = params[:image]
+    img.save!
     redirect('/image')
   end
 
