@@ -36,9 +36,14 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/users' do
-    user = User.new(email: params[:email_signup], password: params[:password_signup], password_confirmation: params[:password_confirmation])
-    user.save
-    redirect '/spaces'
+    @user = User.new(email: params[:email_signup], password: params[:password_signup], password_confirmation: params[:password_confirmation])
+    if @user.save
+      session[:user_id] = @user.id
+      redirect '/spaces'
+    else
+      flash.now[:errors] = @user.errors.full_messages
+      erb :'home'
+    end
   end
 
   post '/sessions' do
