@@ -12,7 +12,7 @@ require 'rspec'
 require 'database_cleaner'
 require_relative '../app/models/space'
 require 'web_helper'
-
+require './app/models/dates'
 require './app/models/user'
 
 Capybara.app = MakersBnb
