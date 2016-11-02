@@ -1,11 +1,9 @@
 
 ENV["RACK_ENV"] ||= 'development'
 require 'sinatra/base'
-require 'carrierwave/datamapper'
 require 'carrierwave'
 require 'sinatra/flash'
 require_relative 'models/data_mapper_setup'
-
 
 class MakersBnb < Sinatra::Base
   use Rack::MethodOverride
@@ -66,14 +64,21 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/image' do
-    @images = Image.all
-    erb :'image'
+    @image = Image.last
+    p @image
+    p @image.file
+    erb :image
   end
 
-  post '/image' do
+  get '/image/new' do
+    @images = Image.all
+    erb :'image_upload'
+  end
+
+  post '/image/new' do
     image = Image.new
     image.file = params[:image]
-    image.save
+    image.save!
     redirect('/image')
   end
 

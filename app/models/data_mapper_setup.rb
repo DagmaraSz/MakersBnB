@@ -1,5 +1,6 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
+require 'carrierwave/datamapper'
 
 require_relative 'user'
 require_relative 'space'

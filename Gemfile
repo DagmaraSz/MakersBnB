@@ -14,6 +14,7 @@ gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem 'rspec'
 gem 'coveralls', require: false
 gem 'sinatra-flash'
+gem "mini_magick"
 
 group :test do
   gem 'capybara'
