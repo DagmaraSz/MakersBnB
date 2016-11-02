@@ -16,4 +16,8 @@ describe Space do
   it "has a description" do
     expect(space).to respond_to(:description)
   end
+
+  it "has a postcode" do
+    expect(space).to respond_to(:postcode)
+  end
 end

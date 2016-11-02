@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/AkramRasikh/MakersBnB.svg?branch=master)](https://travis-ci.org/AkramRasikh/MakersBnB)
+[![Coverage Status](https://coveralls.io/repos/github/AkramRasikh/MakersBnB/badge.svg?branch=master)](https://coveralls.io/github/AkramRasikh/MakersBnB?branch=master)
+
 # User Stories
 
 1. As a user  
@@ -60,6 +63,7 @@ I want to see a place until its booking request has been confirmed
 So that I can keep track of my requests  
 I want to see their status
 
-
 ## Current MVP and progress
 https://waffle.io/AkramRasikh/MakersBnB
+
+[![Stories in Progress](https://badge.waffle.io/AkramRasikh/MakersBnB.svg?label=in_progress&title=In_Progress)](http://waffle.io/AkramRasikh/MakersBnB)
