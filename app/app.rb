@@ -12,11 +12,8 @@ class MakersBnb < Sinatra::Base
   enable :sessions
 
   get '/' do
-    if session[:user_id] != nil
-      redirect '/spaces'
-    else
-      erb :'home'
-    end
+    redirect '/spaces' unless session[:user_id].nil?
+    erb :'home'
   end
 
   before '/spaces' do
