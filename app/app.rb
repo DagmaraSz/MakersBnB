@@ -12,10 +12,10 @@ class MakersBnb < Sinatra::Base
   enable :sessions
 
   get '/' do
-    if @current_user == nil
-      erb :'home'
-    else
+    if session[:user_id] != nil
       redirect '/spaces'
+    else
+      erb :'home'
     end
   end
 
