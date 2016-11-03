@@ -73,7 +73,7 @@ class MakersBnb < Sinatra::Base
     filtered_owner = session[:filter_owner]
     @spaces = Space.all
     if @spaces.map(&:owner).include? filtered_owner
-      @spaces = @spaces.select {|spaces| spaces[:owner] == filtered_owner}
+      @spaces = @spaces.select {|space_hash| space_hash[:owner] == filtered_owner}
     else
       @spaces = []
     end
@@ -100,8 +100,6 @@ class MakersBnb < Sinatra::Base
       redirect('/') if current_user.nil?
     end
   end
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
