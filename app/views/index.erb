@@ -1,5 +1,11 @@
 <body>
   <h2> Makers Bnb </h2>
+
+  <form action="/spaces/calendar" method="post">
+    <center>
+    Search by date: <input type="text" name="day"> <br>
+    <input type="submit" value="filter">
+</form>
     <h3> List of spaces: </h3>
     <ul id ='spaces'>
       <% @spaces.each do |space| %>
