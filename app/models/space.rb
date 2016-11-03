@@ -10,5 +10,5 @@ has n, :calendars, through: Resource
   property :name, String
   property :address, Text
   property :postcode, Text
-  property :price, Decimal
+  property :price, Float
 end
