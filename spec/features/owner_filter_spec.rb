@@ -14,8 +14,8 @@ feature 'filtering properties' do
     fill_in :filter_owner, with: 'dionysis@gmail.com'
     click_button 'filter by owner'
 
-    expect(page.current_path).to eq '/filtered'
-    # expect(page).to have_content('Dionysis house')
-    # expect(page).not_to have_content('Katy house')
+    # expect(page.current_path).to eq '/filtered'
+    expect(page).to have_content('Dionysis house')
+    expect(page).not_to have_content('Katy house')
   end
 end

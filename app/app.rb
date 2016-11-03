@@ -70,24 +70,18 @@ class MakersBnb < Sinatra::Base
   end
 
   get "/filtered" do
-    p "hhh"
-    erb :'home'
-    # p @filtered_owner
-    # p owner
-    # p spaces
-    # p @spaces
-    # if spaces.owner.includes? owner
-    #   @spaces = spaces.owner
-    # else
-    #   @spaces = []
-    # end
-    # erb :'index'
+    filtered_owner = session[:filter_owner]
+    @spaces = Space.all
+    if @spaces.map(&:owner).include? filtered_owner
+      @spaces = @spaces.select {|spaces| spaces[:owner] == filtered_owner}
+    else
+      @spaces = []
+    end
+    erb :'index'
   end
 
   post "/spaces/owners" do
-    p 'jjj'
-    @filtered_owner = params[:filter_owner]
-    p @filtered_owner
+    session[:filter_owner] = params[:filter_owner]
     redirect "/filtered"
   end
 
