@@ -30,7 +30,9 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-    space = Space.create(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
+    space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
+    calendar = Calendar.new(day: params[:day])
+    space.calendars << calendar
     space.save
     redirect '/spaces'
   end
@@ -62,7 +64,6 @@ class MakersBnb < Sinatra::Base
     flash.keep[:notice] = 'goodbye!'
     redirect to '/'
   end
-
 
   helpers do #just to all access
     def current_user
