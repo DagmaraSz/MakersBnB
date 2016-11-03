@@ -9,6 +9,7 @@
         Postcode: <%= space.postcode %> <br>
         Price (£ pw): <%= space.price %> <br>
         Date available: <%= space.calendars.first.day %>
+        Posted by: <%= space.owner %>
       </li>
       <% end %>
     </ul>

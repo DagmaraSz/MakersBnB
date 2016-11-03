@@ -20,7 +20,7 @@ feature 'Space has owner' do
     space = Space.first
 
     expect(space.calendars.map(&:day)).to include('01/07')
-    expect(page).to have_content("Posted by bnb@makers.com")
+    expect(page).to have_content("Posted by: bnb@makers.com")
 
  end
 end

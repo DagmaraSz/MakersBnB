@@ -20,7 +20,7 @@ class User
   validates_length_of :password, :min => 6
   validates_presence_of :email
 
-  has n, :spaces
+  # has n, :spaces
 
   def self.authenticate(email, password)
     user = first(email: email)
