@@ -30,10 +30,17 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-    space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
+    p @current_user
+    space = Space.create(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price], user: @current_user)
     calendar = Calendar.new(day: params[:day])
     space.calendars << calendar
+
+    p space
+    p space.user
     space.save
+
+    p space
+
     redirect '/spaces'
   end
 
