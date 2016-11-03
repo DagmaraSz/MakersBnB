@@ -21,8 +21,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/spaces' do
-    p  "hello3"
-    p @spaces = Space.all
+    @spaces = Space.all
     erb :'index'
   end
 
@@ -70,22 +69,26 @@ class MakersBnb < Sinatra::Base
     redirect "/spaces/#{params[:day]}"
   end
 
-  get "/spaces/owner" do
+  get "/filtered" do
     p "hhh"
-    owner = params[:owner]
-    p owner
-    p spaces
-    p @spaces
-    if spaces.owner.includes? owner
-      @spaces = spaces.owner
-    else
-      @spaces = []
-    end
-    erb :'index'
+    erb :'home'
+    # p @filtered_owner
+    # p owner
+    # p spaces
+    # p @spaces
+    # if spaces.owner.includes? owner
+    #   @spaces = spaces.owner
+    # else
+    #   @spaces = []
+    # end
+    # erb :'index'
   end
 
   post "/spaces/owners" do
-    redirect "/spaces/owner"
+    p 'jjj'
+    @filtered_owner = params[:filter_owner]
+    p @filtered_owner
+    redirect "/filtered"
   end
 
   delete '/sessions' do
