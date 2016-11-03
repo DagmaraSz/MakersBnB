@@ -3,7 +3,7 @@ ENV["RACK_ENV"] ||= 'development'
 require 'sinatra/base'
 require_relative 'models/data_mapper_setup'
 require_relative 'models/space'
-require_relative 'models/dates'
+require_relative 'models/calendar'
 
 
 class MakersBnb < Sinatra::Base
@@ -30,9 +30,8 @@ class MakersBnb < Sinatra::Base
   post '/spaces' do
   space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
   p space
-  date = Date.new(day: params[:day])
-  p date
-  space.dates << date
+  calendar = Calendar.new(day: params[:day])
+  space.calendars << calendar
   space.save
     # params[:date].each do |date|
     #   space.dates << Date.create(date: date)

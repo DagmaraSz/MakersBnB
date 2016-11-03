@@ -8,7 +8,7 @@
         Address: <%= space.address %> <br>
         Postcode: <%= space.postcode %> <br>
         Price (£ pw): <%= space.price %> <br>
-        Date available: <%= space.dates %>
+        Date available: <%= space.calendars.first.day %>
       </li>
       <% end %>
     </ul>
