@@ -14,9 +14,11 @@
         Address: <%= space.address %> <br>
         Postcode: <%= space.postcode %> <br>
         Price (£ pw): <%= space.price %> <br>
-        Date available: <%= space.calendars.first.day %>
+        Date available: <%= space.calendars.first.day %> <br>
+        Posted by: <%= space.owner %>
       </li>
       <% end %>
-    </ul>
+    </ul> <br>
+    <a id='create_space' href="/spaces/new">Click to create a new space</a>
 </body>
 <br>

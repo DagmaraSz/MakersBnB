@@ -30,7 +30,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-    space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
+    space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price], owner: @current_user.email)
     calendar = Calendar.new(day: params[:day])
     space.calendars << calendar
     space.save
