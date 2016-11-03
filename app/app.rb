@@ -1,22 +1,24 @@
 
 ENV["RACK_ENV"] ||= 'development'
 require 'sinatra/base'
+require 'sinatra/flash'
 require_relative 'models/data_mapper_setup'
-require_relative 'models/space'
-require_relative 'models/calendar'
 
 
 class MakersBnb < Sinatra::Base
+  use Rack::MethodOverride
+  register Sinatra::Flash
 
   enable :sessions
 
   get '/' do
+    redirect '/spaces' unless session[:user_id].nil?
     erb :'home'
   end
 
-  # before '/spaces' do
-  #   authenticate
-  # end
+  before '/spaces' do
+    authenticate
+  end
 
   get '/spaces' do
     @spaces = Space.all
@@ -28,29 +30,39 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-  space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
-  p space
-  calendar = Calendar.new(day: params[:day])
-  space.calendars << calendar
-  space.save
-    # params[:date].each do |date|
-    #   space.dates << Date.create(date: date)
-    # end
-    # space.save
-    # params[:month].each do |month|
-    #   space.months << Date.create(month: month)
-    # end
-
-  # date = Date.first_or_create(date: params[:dates])
-  # space.dates << date
-  # space.save
-  redirect '/spaces'
+    space = Space.new(name: params[:name], address: params[:address], postcode: params[:postcode], price: params[:price])
+    calendar = Calendar.new(day: params[:day])
+    space.calendars << calendar
+    space.save
+    redirect '/spaces'
   end
 
   post '/users' do
-    user = User.new(email: params[:email_signup], password: params[:password_signup], password_confirmation: params[:password_confirmation])
-    user.save
-    redirect '/spaces'
+    @user = User.new(email: params[:email_signup], password: params[:password_signup], password_confirmation: params[:password_confirmation])
+    if @user.save
+      session[:user_id] = @user.id
+      redirect '/spaces'
+    else
+      flash.now[:errors] = @user.errors.full_messages
+      erb :'home'
+    end
+  end
+
+  post '/sessions' do
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
+      redirect '/spaces'
+    else
+      flash.now[:errors] = ['The email or password is incorrect']
+      erb :'home'
+    end
+  end
+
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = 'goodbye!'
+    redirect to '/'
   end
 
   helpers do #just to all access

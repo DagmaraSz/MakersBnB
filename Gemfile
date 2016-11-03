@@ -11,6 +11,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'rspec'
 gem 'coveralls', require: false
+gem 'sinatra-flash'
 
 group :test do
   gem 'capybara'

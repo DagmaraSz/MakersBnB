@@ -28,20 +28,28 @@
       <form action="/users" method="post">
         <center>
         E-mail: <input type="text" name="email_signup"> <br>
-        Password: <input type="text" name="password_signup"><br>
-        Password Confirmation: <input type="text" name="password_confirmation"><br>
+        Password: <input type="password" name="password_signup"><br>
+        Password Confirmation: <input type="password" name="password_confirmation"><br>
         <input type="submit" value="Create account">
     </form>
     </section>
     <section id="log_in"> <center>
       <h3> <u> Log in here </u> </h3>
-      <form action="/" method="post">
+      <form action="/sessions" method="post">
         <center>
         E-mail: <input type="text" name="email"> <br>
-        Password: <input type="text" name="password"><br>
+        Password: <input type="password" name="password"><br>
         <input type="submit" value="Log in">
     </form>
     </section>
+    <% if flash[:errors] && !flash[:errors].empty? %>
+      Please refer to the following errors below:
+      <ul id='errors'>
+        <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+    </ul>
+    <% end %>
   </body>
 
 
