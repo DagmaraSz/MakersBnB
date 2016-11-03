@@ -5,7 +5,14 @@
     <center>
     Search by date: <input type="text" name="day"> <br>
     <input type="submit" value="filter">
-</form>
+  </form>
+
+  <form action="/spaces/owners" method="post">
+    <center>
+    Search by owner: <input type="text" name="owner"> <br>
+    <input type="submit" value="filter by owner">
+  </form>
+
     <h3> List of spaces: </h3>
     <ul id ='spaces'>
       <% @spaces.each do |space| %>
