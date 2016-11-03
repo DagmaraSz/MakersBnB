@@ -9,7 +9,7 @@ feature 'See existing dates' do
     fill_in 'price', with: 25
     fill_in 'day', with: '01/07'
 
-    click_button "Post Property"
+    click_button "Post property"
 
     space = Space.first
 
