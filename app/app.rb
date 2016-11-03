@@ -59,6 +59,16 @@ class MakersBnb < Sinatra::Base
     end
   end
 
+  get '/spaces/:day' do
+    calendar = Calendar.first(day: params[:day])
+    @spaces = calendar ? calendar.spaces : []
+    erb :'index'
+  end
+
+  post "/spaces/calendar" do
+    redirect "/spaces/#{params[:day]}"
+  end
+
   delete '/sessions' do
     session[:user_id] = nil
     flash.keep[:notice] = 'goodbye!'
