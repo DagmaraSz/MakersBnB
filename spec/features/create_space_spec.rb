@@ -15,7 +15,7 @@ feature 'create space' do
     fill_in 'address', with: 'liverpool street'
     fill_in 'postcode', with: 'W1 5ux'
     fill_in 'price', with: '350'
-    click_button 'Post property'
+    expect{click_button 'Post Property'}.to change(Space, :count).by(1)
     expect(current_path).to eq '/spaces'
     expect(page).to have_content("liverpool street")
   end
