@@ -16,9 +16,16 @@
         Price (£ pw): <%= space.price %> <br>
         Date available: <%= space.calendars.first.day %> <br>
         Posted by: <%= space.owner %>
+      <button id='request' onclick="requestBooking()" type="button">Request booking</button>
       </li>
       <% end %>
     </ul> <br>
     <a id='create_space' href="/spaces/new">Click to create a new space</a>
 </body>
-<br>
+<script>
+
+  function requestBooking() {
+      $.post( "/booking/new", function( data ) {
+      $( "#request" ).html( Requested );
+      });
+  }
