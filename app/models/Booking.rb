@@ -7,7 +7,7 @@ class Booking
   property :id, Serial
   property :confirmed, Boolean, :default => false
   property :requester, String
-  has 1, :space
+  belongs_to :space
 
   def confirm
     raise "Already confirmed" if @confirmed
