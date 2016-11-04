@@ -2,16 +2,15 @@ require 'spec_helper'
 
 feature 'request button' do
 
-  before(:all) do
-    let(:user) {double(email: "akram@gmail.com", password: "123456")}
-    p user
-    sign_up(email: user.email, password: user.password)
-    log_out
-    let(:owner) {double(email: "bob@gmail.com", password: "123456")}
-    sign_up(email: owner.email, password: owner.password)
-    add_property
-    log_out
+  let!(:space) do
+    Space.create(name: 'Dio', address: 'Commercial road', postcode: 'N1', price:600, calendars: [Calendar.first_or_create(day: '22.03')], owner: 'dio@makers.com')
   end
+
+  let!(:user) do
+    User.create(email: 'bnb@makers.com', password: '123456',
+                password_confirmation: '123456')
+  end
+
   scenario 'allows you to request a space' do
     sign_in(email: user.email, password: user.password)
     expect{click_button 'Request booking'}.to change(Booking, :count).by(1)
