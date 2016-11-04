@@ -6,10 +6,10 @@ class Space
 
   property :id, Serial
   property :name, String
-  property :address, Text
-  property :postcode, Text
+  property :address, String
+  property :postcode, String
   property :price, Float
-  property :owner, Text
+  property :owner, String
   # belongs_to :user, required: false
   has n, :calendars, through: Resource
 end
