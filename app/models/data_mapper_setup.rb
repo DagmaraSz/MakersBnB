@@ -9,5 +9,5 @@ require_relative 'booking'
 
 DataMapper.setup(:default, "postgres://localhost/makersbnb_#{ENV['RACK_ENV']}")
 DataMapper.finalize
-# DataMapper.auto_upgrade!
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
+# DataMapper.auto_migrate!

@@ -17,7 +17,11 @@
         <%= flash[:notice] %>
       </div>
     <% end %>
-    
+
+    <% if @bookings %>
+      empty
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
