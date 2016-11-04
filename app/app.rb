@@ -23,6 +23,7 @@ class MakersBnb < Sinatra::Base
   get '/spaces' do
     @spaces = Space.all
     @bookings = Booking.all
+    # p @bookings
     erb :'index'
   end
 

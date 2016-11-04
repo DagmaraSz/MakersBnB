@@ -18,10 +18,8 @@
       </div>
     <% end %>
 
-    <% if @bookings %>
-      empty
-    <% end %>
-
+   <%= if @bookings.space[0].include? (@current_user) then @message = 'No request were made on your spaces'%>
+      <%= @message %>
     <%= yield %>
   </body>
 </html>
