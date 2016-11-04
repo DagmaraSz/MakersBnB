@@ -37,11 +37,10 @@ feature 'Bookings,' do
   feature 'owner is notified whether a request' do
     scenario 'was not made', focus: true do
       space_3 = Space.create(name: 'Dio house',address: 'Commercial road', postcode: 'E17', price: 500, calendars: [Calendar.first_or_create(day: '03.10')], owner: 'notnotbnb@makers.com')
-      booking = Booking.create(confirmed: false, requester: "Jeff", space: space_3)
-      p Booking.all
-      p Booking.all.space
-      p Booking.all.space[0][:owner]
-      # p booking.space
+      booking = Booking.create(confirmed: false, requester: "Jeff", space: space_2)
+      # p Booking.all
+      # p Booking.all.space
+      bookings = Booking.all
       expect(page).to have_content 'No request were made on your spaces'
     end
     scenario 'was made' do

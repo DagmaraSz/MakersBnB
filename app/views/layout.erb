@@ -11,6 +11,7 @@
         <input type='hidden' name='_method' value='delete'>
         <input type='submit' value='Log out'>
       </form>
+
     <% end %>
     <% if flash[:notice] %>
       <div id='notice'>
@@ -18,8 +19,16 @@
       </div>
     <% end %>
 
-   <%= if @bookings.space[0].include? (@current_user) then @message = 'No request were made on your spaces'%>
-      <%= @message %>
+    <div id='booking'>
+
+    <% if Booking.all.space.map(&:owner).include? @thiscurrentemail %>
+    No request were made on your spaces
+    <% end %>
+
+    <%= Booking.all.space %>
+  </div>
+
+
     <%= yield %>
   </body>
 </html>

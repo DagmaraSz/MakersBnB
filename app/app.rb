@@ -23,7 +23,9 @@ class MakersBnb < Sinatra::Base
   get '/spaces' do
     @spaces = Space.all
     @bookings = Booking.all
-    # p @bookings
+    @thiscurrentemail = @current_user.email
+    p Booking.all.space
+    @bookings.space[0]
     erb :'index'
   end
 
