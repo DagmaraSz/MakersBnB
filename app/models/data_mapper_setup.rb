@@ -4,6 +4,7 @@ require 'dm-postgres-adapter'
 require_relative 'user'
 require_relative 'space'
 require_relative 'calendar'
+require_relative 'booking'
 
 
 

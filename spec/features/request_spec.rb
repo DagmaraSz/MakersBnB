@@ -3,10 +3,11 @@ require 'spec_helper'
 feature 'request button' do
 
   before(:all) do
-    let(:user) {email: "akram@gmail.com", password: "123456"}
+    let(:user) {double(email: "akram@gmail.com", password: "123456")}
+    p user
     sign_up(email: user.email, password: user.password)
     log_out
-    let(:owner) {email: "bob@gmail.com", password: "123456"}
+    let(:owner) {double(email: "bob@gmail.com", password: "123456")}
     sign_up(email: owner.email, password: owner.password)
     add_property
     log_out

@@ -10,6 +10,7 @@ class Space
   property :postcode, String
   property :price, Float
   property :owner, String
-  # belongs_to :user, required: false
   has n, :calendars, through: Resource
+  has n, :bookings
+
 end

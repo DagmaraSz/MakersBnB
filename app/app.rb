@@ -2,6 +2,7 @@
 ENV["RACK_ENV"] ||= 'development'
 require 'sinatra/base'
 require 'sinatra/flash'
+require 'ostruct'
 require_relative 'models/data_mapper_setup'
 
 
@@ -89,6 +90,10 @@ class MakersBnb < Sinatra::Base
     session[:user_id] = nil
     flash.keep[:notice] = 'goodbye!'
     redirect to '/'
+  end
+
+  post "/booking/new" do
+    Booking.first_or_create(space: Space.get(params[:id]), requester: current_user.id)
   end
 
   helpers do #just to all access
